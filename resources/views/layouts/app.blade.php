@@ -7,8 +7,8 @@
     <meta name="description" content="Construction Html5 Template">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
     <link rel="icon" type="image/png" href="images/favicon.png">
-    <link rel="stylesheet" href="plugins/bootstrap/bootstrap.min.css">
-    <link rel="stylesheet" href="plugins/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="{{ asset('plugins/bootstrap/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('plugins/fontawesome/css/all.min.css') }}">
     <link rel="stylesheet" href="plugins/animate-css/animate.css">
     <link rel="stylesheet" href="plugins/slick/slick.css">
     <link rel="stylesheet" href="plugins/slick/slick-theme.css">
@@ -100,9 +100,9 @@
                             </button>
                             <div id="navbar-collapse" class="collapse navbar-collapse">
                                 <ul class="nav navbar-nav mr-auto">
-                                    <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="about.html">Nosotros</a></li>
-                                    <li class="nav-item active"><a class="nav-link" href="services.html">Servicios</a></li>
+                                    <li class="nav-item {{ Request::is('/') ? 'active' : '' }}"><a class="nav-link" href="{{ route('index') }}">Inicio</a></li>
+                                    <li class="nav-item {{ Request::is('nosotros') ? 'active' : '' }}"><a class="nav-link" href="{{ route('about') }}">Nosotros</a></li>
+                                    <li class="nav-item {{ Request::is('servicios') ? 'active' : '' }}"><a class="nav-link" href="{{ route('services') }}">Servicios</a></li>
                                     <li class="nav-item"><a class="nav-link" href="portfolio.html">Portafolio</a></li>
                                     <li class="nav-item"><a class="nav-link" href="contact.html">Contacto</a></li>
                                 </ul>
@@ -113,142 +113,8 @@
             </div>
         </div>
     </header>
-<!--/ Header end -->
-<div id="banner-area" class="banner-area" style="background-image:url(images/banner/banner1.jpg)">
-  <div class="banner-text">
-    <div class="container">
-        <div class="row">
-          <div class="col-lg-12">
-              <div class="banner-heading">
-                <h1 class="banner-title">Servicios</h1>
-                <nav aria-label="breadcrumb">
-                    <ol class="breadcrumb justify-content-center">
-                      <li class="breadcrumb-item"><a href="index.html">Inicio</a></li>
-                      <li class="breadcrumb-item"><a href="">Servicios</a></li>
-                    </ol>
-                </nav>
-              </div>
-          </div><!-- Col end -->
-        </div><!-- Row end -->
-    </div><!-- Container end -->
-  </div><!-- Banner text end -->
-</div><!-- Banner area end --> 
 
-<section id="main-container" class="main-container pb-2">
-  <div class="container">
-    <div class="row">
-
-      <div class="col-lg-4 col-md-6 mb-5">
-        <div class="ts-service-box">
-            <div class="ts-service-image-wrapper">
-              <img loading="lazy" class="w-100" src="images/services/service1.jpg" alt="service-image">
-            </div>
-            <div class="d-flex">
-              <div class="ts-service-box-img">
-                  <img loading="lazy" src="images/icon-image/service-icon1.png" alt="service-icon">
-              </div>
-              <div class="ts-service-info">
-                  <h3 class="service-box-title"><a href="service-single.html">Construcción de Inmuebles</a></h3>
-                  <p>You have ideas, goals, and dreams. We have a culturally diverse, forward thinking team looking for talent like. Lorem ipsum dolor suscipit.</p>
-                  <a class="learn-more d-inline-block" href="service-single.html" aria-label="service-details"><i class="fa fa-caret-right"></i> Leer más</a>
-              </div>
-            </div>
-        </div><!-- Service1 end -->
-      </div><!-- Col 1 end -->
-
-      <div class="col-lg-4 col-md-6 mb-5">
-        <div class="ts-service-box">
-            <div class="ts-service-image-wrapper">
-              <img loading="lazy" class="w-100" src="images/services/service2.jpg" alt="service-image">
-            </div>
-            <div class="d-flex">
-              <div class="ts-service-box-img">
-                  <img loading="lazy" src="images/icon-image/service-icon2.png" alt="service-icon">
-              </div>
-              <div class="ts-service-info">
-                  <h3 class="service-box-title"><a href="service-single.html">Remodelaciones</a></h3>
-                  <p>You have ideas, goals, and dreams. We have a culturally diverse, forward thinking team looking for talent like. Lorem ipsum dolor suscipit.</p>
-                  <a class="learn-more d-inline-block" href="service-single.html" aria-label="service-details"><i class="fa fa-caret-right"></i> Leer más</a>
-              </div>
-            </div>
-        </div><!-- Service2 end -->
-      </div><!-- Col 2 end -->
-
-      <div class="col-lg-4 col-md-6 mb-5">
-        <div class="ts-service-box">
-            <div class="ts-service-image-wrapper">
-              <img loading="lazy" class="w-100" src="images/services/service3.jpg" alt="service-image">
-            </div>
-            <div class="d-flex">
-              <div class="ts-service-box-img">
-                  <img loading="lazy" src="images/icon-image/service-icon3.png" alt="service-icon">
-              </div>
-              <div class="ts-service-info">
-                  <h3 class="service-box-title"><a href="service-single.html">Diseño Interior</a></h3>
-                  <p>You have ideas, goals, and dreams. We have a culturally diverse, forward thinking team looking for talent like. Lorem ipsum dolor suscipit.</p>
-                  <a class="learn-more d-inline-block" href="service-single.html" aria-label="service-details"><i class="fa fa-caret-right"></i> Leer más</a>
-              </div>
-            </div>
-        </div><!-- Service3 end -->
-      </div><!-- Col 3 end -->
-
-      <div class="col-lg-4 col-md-6 mb-5">
-        <div class="ts-service-box">
-            <div class="ts-service-image-wrapper">
-              <img loading="lazy" class="w-100" src="images/services/service4.jpg" alt="service-image">
-            </div>
-            <div class="d-flex">
-              <div class="ts-service-box-img">
-                  <img loading="lazy" src="images/icon-image/service-icon4.png" alt="service-icon">
-              </div>
-              <div class="ts-service-info">
-                  <h3 class="service-box-title"><a href="service-single.html">Diseño Exterior</a></h3>
-                  <p>You have ideas, goals, and dreams. We have a culturally diverse, forward thinking team looking for talent like. Lorem ipsum dolor suscipit.</p>
-                  <a class="learn-more d-inline-block" href="service-single.html" aria-label="service-details"><i class="fa fa-caret-right"></i> Leer más</a>
-              </div>
-            </div>
-        </div><!-- Service1 end -->
-      </div><!-- Col 4 end -->
-
-      <div class="col-lg-4 col-md-6 mb-5">
-        <div class="ts-service-box">
-            <div class="ts-service-image-wrapper">
-              <img loading="lazy" class="w-100" src="images/services/service5.jpg" alt="service-image">
-            </div>
-            <div class="d-flex">
-              <div class="ts-service-box-img">
-                  <img loading="lazy" src="images/icon-image/service-icon5.png" alt="service-icon">
-              </div>
-              <div class="ts-service-info">
-                  <h3 class="service-box-title"><a href="service-single.html">Renovación</a></h3>
-                  <p>You have ideas, goals, and dreams. We have a culturally diverse, forward thinking team looking for talent like. Lorem ipsum dolor suscipit.</p>
-                  <a class="learn-more d-inline-block" href="service-single.html" aria-label="service-details"><i class="fa fa-caret-right"></i> Leer más</a>
-              </div>
-            </div>
-        </div><!-- Service2 end -->
-      </div><!-- Col 5 end -->
-
-      <div class="col-lg-4 col-md-6 mb-5">
-        <div class="ts-service-box">
-            <div class="ts-service-image-wrapper">
-              <img loading="lazy" class="w-100" src="images/services/service6.jpg" alt="service-image">
-            </div>
-            <div class="d-flex">
-              <div class="ts-service-box-img">
-                  <img loading="lazy" src="images/icon-image/service-icon6.png" alt="service-icon">
-              </div>
-              <div class="ts-service-info">
-                  <h3 class="service-box-title"><a href="service-single.html">Gestión de Seguridad</a></h3>
-                  <p>You have ideas, goals, and dreams. We have a culturally diverse, forward thinking team looking for talent like. Lorem ipsum dolor suscipit.</p>
-                  <a class="learn-more d-inline-block" href="service-single.html" aria-label="service-details"><i class="fa fa-caret-right"></i> Leer más</a>
-              </div>
-            </div>
-        </div><!-- Service3 end -->
-      </div><!-- Col 6 end -->
-
-    </div><!-- Main row end -->
-  </div><!-- Conatiner end -->
-</section><!-- Main container end -->
+    @yield('content')
 
     <footer id="footer" class="footer bg-overlay">
         <div class="footer-main">
@@ -314,8 +180,7 @@
             </div>
         </div>
     </footer>
-
-    <script src="plugins/jQuery/jquery.min.js"></script>
+    <script src="{{ asset('plugins/jQuery/jquery.min.js') }}"></script>
     <script src="plugins/bootstrap/bootstrap.min.js" defer></script>
     <script src="plugins/slick/slick.min.js"></script>
     <script src="plugins/slick/slick-animation.min.js"></script>
