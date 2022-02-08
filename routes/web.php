@@ -24,3 +24,16 @@ Route::get('/nosotros', function () {
 Route::get('/servicios', function () {
     return view('services');
 })->name('services');
+
+Route::get('/contacto', function () {
+    return view('contact');
+})->name('contact');
+
+Route::get('/portafolio', function () {
+    return view('portfolio');
+})->name('portfolio');
+
+Route::get('/preguntas-frecuentes', function () {
+    return view('faq');
+})->name('faq');
+

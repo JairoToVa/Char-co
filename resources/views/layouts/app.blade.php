@@ -9,13 +9,41 @@
     <link rel="icon" type="image/png" href="images/favicon.png">
     <link rel="stylesheet" href="{{ asset('plugins/bootstrap/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('plugins/fontawesome/css/all.min.css') }}">
-    <link rel="stylesheet" href="plugins/animate-css/animate.css">
-    <link rel="stylesheet" href="plugins/slick/slick.css">
-    <link rel="stylesheet" href="plugins/slick/slick-theme.css">
-    <link rel="stylesheet" href="plugins/colorbox/colorbox.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="{{ asset('plugins/animate-css/animate.css') }}">
+    <link rel="stylesheet" href="{{ asset('plugins/slick/slick.css') }}">
+    <link rel="stylesheet" href="{{ asset('plugins/slick/slick-theme.css') }}">
+    <link rel="stylesheet" href="{{ asset('plugins/colorbox/colorbox.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <style type="text/css">
+        .float{
+          position:fixed;
+          width:60px;
+          height:60px;
+          bottom:80px;
+          right:28px;
+          background-color:#25d366;
+          color:#FFF;
+          border-radius:50px;
+          text-align:center;
+          font-size:30px;
+          box-shadow: 2px 2px 3px #222;
+          z-index:100;
+        }
+        .float:hover {
+          text-decoration: none;
+          color: #25d366;
+          background-color:#fff;
+        }
+
+        .my-float{
+          margin-top:16px;
+        }
+    </style>
 </head>
 <body>
+    <a href="https://wa.me/5218442892397?text=prueba%20uno" class="float" target="_blank">
+        <i class="fab fa-whatsapp my-float"></i>
+    </a>
     <div id="top-bar" class="top-bar">
         <div class="container">
           <div class="row">
@@ -51,7 +79,7 @@
                     <div class="row align-items-center">
                         <div class="logo col-lg-3 text-center text-lg-left mb-3 mb-md-5 mb-lg-0">
                             <a class="d-block" href="index.html">
-                                <img loading="lazy" src="images/logo.png" alt="Char.co">
+                                <img loading="lazy" src="images/logo1.png" alt="Char.co">
                             </a>
                         </div>
                         <div class="col-lg-9 header-right">
@@ -81,7 +109,7 @@
                                     </div>
                                 </li>
                                 <li class="header-get-a-quote">
-                                    <a class="btn btn-primary" href="contact.html">Cotizar ahora</a>
+                                    <a class="btn btn-primary" href="{{ route('contact') }}">Solicitar Información</a>
                                 </li>
                             </ul>
                         </div>
@@ -103,8 +131,8 @@
                                     <li class="nav-item {{ Request::is('/') ? 'active' : '' }}"><a class="nav-link" href="{{ route('index') }}">Inicio</a></li>
                                     <li class="nav-item {{ Request::is('nosotros') ? 'active' : '' }}"><a class="nav-link" href="{{ route('about') }}">Nosotros</a></li>
                                     <li class="nav-item {{ Request::is('servicios') ? 'active' : '' }}"><a class="nav-link" href="{{ route('services') }}">Servicios</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="portfolio.html">Portafolio</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="contact.html">Contacto</a></li>
+                                    <li class="nav-item {{ Request::is('portafolio') ? 'active' : '' }}"><a class="nav-link" href="{{ route('portfolio') }}">Portafolio</a></li>
+                                    <li class="nav-item {{ Request::is('contacto') ? 'active' : '' }}"><a class="nav-link" href="{{ route('contact') }}">Contacto</a></li>
                                 </ul>
                             </div>
                         </nav>
@@ -122,7 +150,7 @@
                 <div class="row justify-content-between">
                     <div class="col-lg-4 col-md-6 footer-widget footer-about">
                         <h3 class="widget-title">Nosotros</h3>
-                        <img loading="lazy" width="200px" class="footer-logo" src="images/footer-logo.png" alt="Char.co">
+                        <img loading="lazy" width="200px" class="footer-logo" src="images/footer-logo1.png" alt="Char.co">
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor inci done idunt ut labore et dolore magna aliqua.</p>
                         <div class="footer-social">
                             <ul>
@@ -144,11 +172,11 @@
                     <div class="col-lg-3 col-md-6 mt-5 mt-lg-0 footer-widget">
                         <h3 class="widget-title">Servicios</h3>
                         <ul class="list-arrow">
-                            <li><a href="service-single.html">Construcción</a></li>
-                            <li><a href="service-single.html">Contratación General</a></li>
-                            <li><a href="service-single.html">Gestión de Construcción</a></li>
-                            <li><a href="service-single.html">Diseño y Renovación</a></li>
-                            <li><a href="service-single.html">Seguridad</a></li>
+                            <li><a href="#">Construcción</a></li>
+                            <li><a href="#">Contratación General</a></li>
+                            <li><a href="#">Gestión de Construcción</a></li>
+                            <li><a href="#">Diseño y Renovación</a></li>
+                            <li><a href="#">Seguridad</a></li>
                         </ul>
                     </div>
                 </div>
@@ -165,9 +193,9 @@
                     <div class="col-md-6">
                         <div class="footer-menu text-center text-md-right">
                             <ul class="list-unstyled">
-                                <li><a href="about.html" class="text-white">Nosotros</a></li>
-                                <li><a href="faq.html" class="text-white">FAQ</a></li>
-                                <li><a href="contact.html" class="text-white">Cotizaciones</a></li>
+                                <li><a href="{{ route('about') }}" class="text-white">Nosotros</a></li>
+                                <li><a href="{{ route('faq') }}" class="text-white">FAQ</a></li>
+                                <li><a href="{{ route('contact') }}" class="text-white">Contacto</a></li>
                             </ul>
                         </div>
                     </div>
@@ -181,12 +209,12 @@
         </div>
     </footer>
     <script src="{{ asset('plugins/jQuery/jquery.min.js') }}"></script>
-    <script src="plugins/bootstrap/bootstrap.min.js" defer></script>
-    <script src="plugins/slick/slick.min.js"></script>
-    <script src="plugins/slick/slick-animation.min.js"></script>
-    <script src="plugins/colorbox/jquery.colorbox.js"></script>
-    <script src="plugins/shuffle/shuffle.min.js" defer></script>
-    <script src="js/script.js"></script>
+    <script src="{{ asset('plugins/bootstrap/bootstrap.min.js') }}" defer></script>
+    <script src="{{ asset('plugins/slick/slick.min.js') }}"></script>
+    <script src="{{ asset('plugins/slick/slick-animation.min.js') }}"></script>
+    <script src="{{ asset('plugins/colorbox/jquery.colorbox.js') }}"></script>
+    <script src="{{ asset('plugins/shuffle/shuffle.min.js') }}" defer></script>
+    <script src="{{ asset('js/script.js') }}"></script>
 </body>
 
 </html>
