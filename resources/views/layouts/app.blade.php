@@ -15,33 +15,94 @@
     <link rel="stylesheet" href="{{ asset('plugins/colorbox/colorbox.css') }}">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <style type="text/css">
-        .float{
-          position:fixed;
-          width:60px;
-          height:60px;
-          bottom:80px;
-          right:28px;
-          background-color:#25d366;
-          color:#FFF;
-          border-radius:50px;
-          text-align:center;
-          font-size:30px;
-          box-shadow: 2px 2px 3px #222;
-          z-index:100;
+        .sidenav {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 10000;
+            top: 0;
+            right: 0;
+            background-color: rgba(255,255,255,0.95);
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 25px;
         }
-        .float:hover {
-          text-decoration: none;
-          color: #25d366;
-          background-color:#fff;
+        .sidenav .closebtn {
+            position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 36px;
+            margin-left: 50px;
         }
-
-        .my-float{
-          margin-top:16px;
+        .card .card-body .btn-house{
+            font-size: 12px;
+            padding-left: 10px;
+        }
+        .card .card-body .card-title.text-price{
+            color: #7ed858;
+        }
+        @media screen and (max-height: 450px) {
+            .sidenav {
+                padding-top: 15px;
+            }
+            .sidenav a {
+                font-size: 18px;
+            }
         }
     </style>
 </head>
 <body>
-    <a href="https://wa.me/5218442892397?text=prueba%20uno" class="float" target="_blank">
+    <div id="mySidenav" class="sidenav">
+        <div class="row mx-2">
+            <div class="col-lg-10">
+                <h4 class="m-0">Casas Disponibles</h4>
+            </div>
+            <div class="col-lg-2">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            </div>
+        </div>
+        <br>
+        <div class="form-group mx-2">
+            <input type="text" class="form-control" name="search" placeholder="Buscar...">
+        </div>
+        <div class="row mx-1">
+            <div class="col-lg-6 col-md-6 col-sm-12 px-1 mb-2">
+                <div class="card border-0 shadow-sm">
+                    <img class="card-img-top" src="https://img.remediosdigitales.com/8e8f64/lo-de-que-comprar-una-casa-es-la-mejor-inversion-hay-generaciones-que-ya-no-lo-ven-ni-de-lejos---1/840_560.jpg" alt="Card image">
+                    <div class="card-body p-2">
+                        <h5 class="card-title mb-0">Real del Sol</h5>
+                        <h6 class="card-title text-price mb-1">$1,000,000</h6>
+                        <p class="card-text mb-1">Saltillo, Coah.</p>
+                        <a href="#" class="btn btn-outline-secondary btn-block btn-house">Ver más detalles</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12 px-1 mb-2">
+                <div class="card border-0 shadow-sm">
+                    <img class="card-img-top" src="https://img.remediosdigitales.com/8e8f64/lo-de-que-comprar-una-casa-es-la-mejor-inversion-hay-generaciones-que-ya-no-lo-ven-ni-de-lejos---1/840_560.jpg" alt="Card image">
+                    <div class="card-body p-2">
+                        <h5 class="card-title mb-0">La Aurora</h5>
+                        <h6 class="card-title text-price mb-1">$1,000,000</h6>
+                        <p class="card-text mb-1">Saltillo, Coah.</p>
+                        <a href="#" class="btn btn-outline-secondary btn-block btn-house">Ver más detalles</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12 px-1 mb-2">
+                <div class="card border-0 shadow-sm">
+                    <img class="card-img-top" src="https://img.remediosdigitales.com/8e8f64/lo-de-que-comprar-una-casa-es-la-mejor-inversion-hay-generaciones-que-ya-no-lo-ven-ni-de-lejos---1/840_560.jpg" alt="Card image">
+                    <div class="card-body p-2">
+                        <h5 class="card-title mb-0">Fracc. Maravillas</h5>
+                        <h6 class="card-title text-price mb-1">$1,000,000</h6>
+                        <p class="card-text mb-1">Saltillo, Coah.</p>
+                        <a href="#" class="btn btn-outline-secondary btn-block btn-house">Ver más detalles</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <a href="https://wa.me/5218442892397?text=Requiero%20más%20información" class="float" target="_blank">
         <i class="fab fa-whatsapp my-float"></i>
     </a>
     <div id="top-bar" class="top-bar">
@@ -78,7 +139,7 @@
                 <div class="logo-area">
                     <div class="row align-items-center">
                         <div class="logo col-lg-3 text-center text-lg-left mb-3 mb-md-5 mb-lg-0">
-                            <a class="d-block" href="index.html">
+                            <a class="d-block" href="{{ route('index') }}">
                                 <img loading="lazy" src="images/logo1.png" alt="Char.co">
                             </a>
                         </div>
@@ -133,6 +194,9 @@
                                     <li class="nav-item {{ Request::is('servicios') ? 'active' : '' }}"><a class="nav-link" href="{{ route('services') }}">Servicios</a></li>
                                     <li class="nav-item {{ Request::is('portafolio') ? 'active' : '' }}"><a class="nav-link" href="{{ route('portfolio') }}">Portafolio</a></li>
                                     <li class="nav-item {{ Request::is('contacto') ? 'active' : '' }}"><a class="nav-link" href="{{ route('contact') }}">Contacto</a></li>
+                                </ul>
+                                <ul class="my-auto">
+                                    <li class="btn btn-primary text-white" onclick="openNav()"><i class="fab fa-home"></i> Casas Disponibles</li>
                                 </ul>
                             </div>
                         </nav>
@@ -215,6 +279,14 @@
     <script src="{{ asset('plugins/colorbox/jquery.colorbox.js') }}"></script>
     <script src="{{ asset('plugins/shuffle/shuffle.min.js') }}" defer></script>
     <script src="{{ asset('js/script.js') }}"></script>
+    <script>
+        function openNav() {
+          document.getElementById("mySidenav").style.width = "450px";
+        }
+        function closeNav() {
+          document.getElementById("mySidenav").style.width = "0";
+        }
+  </script>
 </body>
 
 </html>

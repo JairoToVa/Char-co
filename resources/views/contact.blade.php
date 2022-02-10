@@ -59,7 +59,7 @@
                         </span>
                         <div class="ts-service-box-content">
                             <h4>WhatsApp</h4>
-                            <p><a class="btn btn-link text-white" href="https://wa.me/5218442892397?text=prueba%20uno" target="_blank">8440000000</a></p>
+                            <p><a class="btn btn-link text-white" href="https://wa.me/5218442892397?text=Requiero%20más%20información" target="_blank">8440000000</a></p>
                         </div>
                     </div>
                 </div>

@@ -64,7 +64,7 @@
                     </div>
                     <div class="col-md-4 text-center text-md-right mt-3 mt-md-0">
                         <div class="call-to-action-btn">
-                            <a class="btn btn-dark" href="#">Solicitar Información</a>
+                            <a class="btn btn-dark" href="{{ route('contact') }}">Solicitar Información</a>
                         </div>
                     </div>
                 </div>
