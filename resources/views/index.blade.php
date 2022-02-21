@@ -129,20 +129,20 @@
                 </div>
 
                 <div class="col-lg-6 mt-4 mt-lg-0">
-                    <h3 class="into-sub-title">Nuestros Valores</h3>
-                    <p>Nos aseguramos de al menos contar con 3 valores indispensables para que nuestros clientes se sientan respaldados con la calidad de servicios que ofrecemos.</p>
+                    <h3 class="into-sub-title">Sobre Nosotros</h3>
+                    <p>Nos aseguramos que nuestros clientes nos conozcan de forma transparente, desarrollando la misión y visión de nuestra empresa y de los servicios que ofrecemos.</p>
                     <div class="accordion accordion-group" id="our-values-accordion">
                         <div class="card">
                             <div class="card-header p-0 bg-transparent" id="headingOne">
                                 <h2 class="mb-0">
                                     <button class="btn btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                        Seguridad
+                                        quiénes somos
                                     </button>
                                 </h2>
                             </div>
                             <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#our-values-accordion">
                                 <div class="card-body">
-                                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidata
+                                    En CHAR-CO somos una desarrolladora inmobiliaria donde proyectamos los sueños de muchas familias e inversores asegurando el valor de su patrimonio
                                 </div>
                             </div>
                         </div>
@@ -150,13 +150,13 @@
                             <div class="card-header p-0 bg-transparent" id="headingTwo">
                                 <h2 class="mb-0">
                                     <button class="btn btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                        Servicio al Cliente
+                                        Misión
                                     </button>
                                 </h2>
                             </div>
                             <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#our-values-accordion">
                                 <div class="card-body">
-                                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidata
+                                    Ser una gran empresa constructora líder en terminos de calidad y satisfacción, con la principal encomienda de generar valor al patrimonio de nuestros clientes
                                 </div>
                             </div>
                         </div>
@@ -164,13 +164,13 @@
                             <div class="card-header p-0 bg-transparent" id="headingThree">
                                 <h2 class="mb-0">
                                     <button class="btn btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                        Integridad
+                                        Visión
                                     </button>
                                 </h2>
                             </div>
                             <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#our-values-accordion">
                                 <div class="card-body">
-                                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidata
+                                    Desarrollar espacios y crear obras mejorando la calidad de vida de las familias, asegurando la satisfacción de nuestros clientes
                                 </div>
                             </div>
                         </div>
@@ -462,7 +462,7 @@
 
       <div class="col-12">
         <div class="general-btn text-center">
-          <a class="btn btn-primary" href="portfolio.html">Ver todos los Proyectos</a>
+          <a class="btn btn-primary" href="{{ route('portfolio') }}">Ver todos los Proyectos</a>
         </div>
       </div>
 
